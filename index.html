@@ -3,33 +3,86 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Book Site</title>
-  <link rel="stylesheet" href="style.css"/>
+  <title>Welcome to My Book</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #121212;
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #1f1f1f;
+      padding: 20px 30px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5em;
+      margin: 0;
+      color: #ffffff;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: #90caf9;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 30px;
+      max-width: 800px;
+      margin: auto;
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #bb86fc;
+      margin-top: 0;
+    }
+
+    a.chapter-link {
+      color: #03dac6;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a.chapter-link:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #aaa;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>📖 Welcome to My Book</h1>
+    <h1>📘 Welcome to My Book</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="chapters.html">Chapters</a>
-      <a href="about.html">About</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="message">
-      <h2>Author's Message</h2>
-      <p>Hello readers! Thank you for visiting. New chapters will be added every week. Stay tuned!</p>
-    </section>
-
-    <section class="latest">
-      <h2>Latest Chapter</h2>
-      <p><a href="chapter1.html">Read Chapter 1</a> (Coming soon!)</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 My Book</p>
-  </footer>
-</body>
-</html>
+      <a href="about.html">About</a
