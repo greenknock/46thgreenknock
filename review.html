@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Review - THE 46th GREEN KNOCK</title>
+  <style>
+    body {
+      font-family: 'Merriweather', serif;
+      background-color: #0a0a0a;
+      color: #ffffff;
+      margin: 0;
+      padding: 2rem;
+    }
+    h1 {
+      color: #90ee90;
+      text-align: center;
+    }
+    form {
+      max-width: 600px;
+      margin: auto;
+      background-color: #1a1a1a;
+      padding: 2rem;
+      border-radius: 10px;
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.3rem;
+      border-radius: 5px;
+      border: none;
+      background-color: #333;
+      color: white;
+    }
+    button {
+      margin-top: 1.5rem;
+      padding: 0.7rem 1.5rem;
+      background-color: #90ee90;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #76d776;
+    }
+  </style>
+</head>
+<body>
+  <h1>Chapter Review</h1>
+  <form>
+    <label for="chapter">Chapter Number</label>
+    <select id="chapter" name="chapter">
+      <option value="1">Chapter 1</option>
+      <option value="2">Chapter 2</option>
+      <option value="3">Chapter 3</option>
+      <option value="4">Chapter 4</option>
+    </select>
+
+    <label for="review">Your Review</label>
+    <textarea id="review" name="review" rows="4" placeholder="What are your thoughts? Any doubts?"></textarea>
+
+    <label for="character">Favorite Character and Why?</label>
+    <textarea id="character" name="character" rows="2" placeholder="Tell us who you liked and why..."></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
