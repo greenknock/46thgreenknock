@@ -1,88 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Welcome to My Book</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Red Memory</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Open Sans', sans-serif;
-      background-color: #121212;
-      color: #e0e0e0;
-      line-height: 1.6;
+      font-family: 'Merriweather', Georgia, serif;
+      background-color: #0f0f0f;
+      color: #f5f5f5;
+      line-height: 1.8;
     }
 
     header {
-      background-color: #1f1f1f;
-      padding: 20px 30px;
+      background-color: #1c1c1c;
+      padding: 1.5rem;
       text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+      border-bottom: 1px solid #333;
     }
 
     header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5em;
       margin: 0;
-      color: #ffffff;
-    }
-
-    nav {
-      margin-top: 10px;
-    }
-
-    nav a {
-      color: #90caf9;
-      text-decoration: none;
-      margin: 0 10px;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    main {
-      padding: 30px;
-      max-width: 800px;
-      margin: auto;
-      background-color: #1e1e1e;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      font-size: 2.5rem;
+      color: #e63946;
     }
 
     section {
-      margin-bottom: 30px;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      background-color: #1a1a1a;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(255, 0, 0, 0.1);
     }
 
-    h2 {
-      color: #bb86fc;
-      margin-top: 0;
+    section h2 {
+      color: #ff6b6b;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
     }
 
-    a.chapter-link {
-      color: #03dac6;
+    section p {
+      font-size: 1.05rem;
+      margin-bottom: 1.4rem;
+      text-align: left;
+    }
+
+    .chapter-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .chapter-nav a {
       text-decoration: none;
-      font-weight: bold;
+      background-color: #2a2a2a;
+      color: #f5f5f5;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
     }
 
-    a.chapter-link:hover {
-      text-decoration: underline;
+    .chapter-nav a:hover {
+      background-color: #e63946;
+      color: #fff;
     }
 
     footer {
       text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      color: #aaa;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #888;
+      border-top: 1px solid #333;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 600px) {
+      section {
+        margin: 1rem;
+        padding: 1rem;
+      }
+
+      .chapter-nav {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <header>
-    <h1>📘 Welcome to My Book</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="chapters.html">Chapters</a>
-      <a href="about.html">About</a
+    <h1>The Red Memory</h1>
+  </header>
+
+  <section>
+    <h2>📖 About the Book</h2>
+    <p>
+      In a town shaped by memory and controlled by silence, a group of students begins to unravel threads they were never meant to touch.
+    </p>
+    <p>
+      As old fears stir beneath peaceful mountains and friendships begin to tangle with something darker, a quiet boy, a stoic senior, and an unlikely crew find themselves pulled into a place where memories fade, truths twist, and every moment feels like a warning.
+    </p>
+    <p>
+      Told through subtle shifts of tone—from warmth to dread—this is a slow-burning psychological drama with flashes of dark humor, school life, and a creeping mystery. Beneath the lighthearted banter and teenage chaos, a question pulses quietly: <strong>What’s really happening in this town—and why does no one remember?</strong>
+    </p>
+  </section>
+
+  <section>
+    <h2>✍️ Message from the Author</h2>
+    <p>
+      Thank you for visiting. If you are reading this book, I want you to have faith in me and step into this journey. The 3% of work like improving grammar is done by artificial intelligence.
+    </p>
+    <p>
+      This story means more than just a narrative—it’s a reflection of emotion, trauma, and the things we bury deep within our minds. Through Sheeran, Arin, Wamiqa, and the mysteries that twist through their memories, I hope to offer you something haunting, yet strangely familiar.
+    </p>
+  </section>
+
+  <section>
+    <h2>📚 Read the Chapters</h2>
+    <p>
+      This is the official site for my original psychological mystery, <em>'The Red Memory.'</em> New chapters release regularly. Start from Chapter 1 below!
+    </p>
+    <div class="chapter-nav">
+      <a href="#">Chapter 1</a>
+      <a href="#">Chapter 2</a>
+      <a href="#">Chapter 3</a>
+      <a href="#">Chapter 4</a>
+      <a href="#">Chapter 5</a>
+      <a href="#">Chapter 6</a>
+      <a href="#">Chapter 7</a>
+      <a href="#">Chapter 8</a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 The Red Memory. All rights reserved.
+  </footer>
+</body>
+
+</html>
