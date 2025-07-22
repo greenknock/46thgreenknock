@@ -2,27 +2,141 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Chapters</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Red Memory — Chapters</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #121212;
+      color: #e0e0e0;
+      font-family: 'Merriweather', serif;
+      line-height: 1.8;
+      margin: 0;
+      padding: 0 1rem;
+    }
+    header {
+      background-color: #1c1c1c;
+      padding: 1.5rem;
+      text-align: center;
+      border-bottom: 1px solid #333;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.3rem;
+      color: #e63946;
+    }
+    nav {
+      margin: 1rem 0;
+      text-align: center;
+    }
+    nav a {
+      color: #90caf9;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .intro {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0;
+      text-align: center;
+    }
+    .chapter-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+      max-width: 800px;
+      margin: 2rem auto;
+    }
+    .chapter-card {
+      background-color: #1f1f1f;
+      padding: 1rem 1.2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(255, 0, 0, 0.2);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    .chapter-card:hover {
+      background-color: #2a2a2a;
+      transform: translateY(-4px);
+    }
+    .chapter-card a {
+      color: #f5f5f5;
+      text-decoration: none;
+      font-size: 1.1rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .chapter-card small {
+      color: #888;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #888;
+      border-top: 1px solid #333;
+      margin-top: 2rem;
+    }
+    @media (max-width: 500px) {
+      header h1 { font-size: 1.8rem; }
+      .chapter-card { padding: 0.8rem; }
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>📘 Chapters</h1>
+    <h1>The Red Memory</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="chapters.html">Chapters</a>
-      <a href="about.html">About</a>
+      <a href="about.html">About Book</a>
     </nav>
   </header>
 
-  <main>
-    <ul>
-      <li><a href="chapter1.html">Chapter 1: The Beginning</a></li>
-    </ul>
-  </main>
+  <div class="intro">
+    <p><strong>Explore all currently released chapters. Click a card to read!</strong></p>
+  </div>
+
+  <div class="chapter-list">
+    <div class="chapter-card">
+      <a href="chapter1.html">Chapter 1: Awakening</a>
+      <small>introducing Arin’s unsettling journey</small>
+    </div>
+    <div class="chapter-card">
+      <a href="chapter2.html">Chapter 2: Mystery Hospital</a>
+      <small>Arin questions what’s real</small>
+    </div>
+    <div class="chapter-card">
+      <a href="chapter3.html">Chapter 3: Flow of Emotion</a>
+      <small>school life with a dark undercurrent</small>
+    </div>
+    <div class="chapter-card">
+      <a href="chapter4.html">Chapter 4: Rain of Questions</a>
+      <small>secrets begin to surface</small>
+    </div>
+    <div class="chapter-card">
+      <a href="chapter5.html">Chapter 5: Crimson Blessings</a>
+      <small>rituals turn gruesome</small>
+    </div>
+    <div class="chapter-card">
+      <a href="chapter6.html">Chapter 6: Loop of Trauma</a>
+      <small>Sheeran trapped in repeating horror</small>
+    </div>
+    <div class="chapter-card">
+      <a href="chapter7.html">Chapter 7: Mysterious Man</a>
+      <small>shedding light on the puppeteers</small>
+    </div>
+    <div class="chapter-card">
+      <a href="chapter8.html">Chapter 8: Arrival</a>
+      <small>the climb becomes terrifying</small>
+    </div>
+  </div>
 
   <footer>
-    <p>© 2025 My Book</p>
+    &copy; 2025 The Red Memory. All rights reserved.
   </footer>
 </body>
 </html>
