@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://greenknock.github.io/46thgreenknock/sitemap.xml
