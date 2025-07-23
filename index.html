@@ -47,7 +47,7 @@
     }
 
     .button {
-      margin-top: 2rem;
+      margin-top: 1rem;
       background-color: #1f1f1f;
       color: #90ee90;
       padding: 0.8rem 1.6rem;
@@ -55,12 +55,20 @@
       border-radius: 8px;
       text-decoration: none;
       font-size: 1rem;
+      display: inline-block;
       transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
     .button:hover {
       background-color: #333;
       transform: scale(1.05);
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
     }
   </style>
 </head>
@@ -69,7 +77,11 @@
   <h1>THE 46th GREEN KNOCK</h1>
   <p>A psychological mystery thriller</p>
 
-  <a href="chapters.html" class="button">Read Chapters</a>
-  <a href="review.html" class="button">Leave a Review</a>
+  <div class="button-container">
+    <a href="chapters.html" class="button">Read Chapters</a>
+    <a href="review.html" class="button">Leave a Review</a>
+    <a href="about.html" class="button">About Book</a>
+    <a href="updates.html" class="button">Updates</a>
+  </div>
 </body>
 </html>
