@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,9 +53,9 @@
 </head>
 <body>
   <h1>Chapter Review</h1>
-  <form>
+  <form action="https://formspree.io/f/xanbelbn" method="POST">
     <label for="chapter">Chapter Number</label>
-    <select id="chapter" name="chapter">
+    <select id="chapter" name="chapter" required>
       <option value="1">Chapter 1</option>
       <option value="2">Chapter 2</option>
       <option value="3">Chapter 3</option>
@@ -64,10 +63,13 @@
     </select>
 
     <label for="review">Your Review</label>
-    <textarea id="review" name="review" rows="4" placeholder="What are your thoughts? Any doubts?"></textarea>
+    <textarea id="review" name="review" rows="4" placeholder="What are your thoughts? Any doubts?" required></textarea>
 
     <label for="character">Favorite Character and Why?</label>
-    <textarea id="character" name="character" rows="2" placeholder="Tell us who you liked and why..."></textarea>
+    <textarea id="character" name="character" rows="2" placeholder="Tell us who you liked and why..." required></textarea>
+
+    <label for="email">Your Email (optional)</label>
+    <input type="email" name="email" placeholder="example@gmail.com">
 
     <button type="submit">Submit</button>
   </form>
