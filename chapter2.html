@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 2 - Coming Soon</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Chapter 2 of THE 46th GREEN KNOCK will be available on 29 July at 8 PM. Stay tuned!">
+  <meta name="author" content="Green Knock">
+
+  <style>
+    body {
+      font-family: 'Merriweather', serif;
+      background-color: #121212;
+      color: #e0e0e0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    h1 {
+      color: #81c784;
+      font-size: 2.5rem;
+    }
+    p {
+      font-size: 1.2rem;
+      margin-top: 15px;
+      color: #ff5252;
+    }
+    #countdown {
+      font-size: 1.5rem;
+      margin-top: 20px;
+      color: #90caf9;
+      font-weight: bold;
+    }
+    a {
+      margin-top: 30px;
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #81c784;
+      color: #121212;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+    a:hover {
+      background-color: #66bb6a;
+    }
+  </style>
+</head>
+<body>
+  <h1>Chapter 2</h1>
+  <p>Coming on <strong>29 July at 8 PM</strong>! Stay tuned for the update.</p>
+
+  <div id="countdown">Loading countdown...</div>
+
+  <a href="chapters.html">← Back to Chapters</a>
+
+  <script>
+    // Set the target date & time (29 July 2025, 8:00 PM IST)
+    const targetDate = new Date('July 29, 2025 20:00:00 GMT+0530').getTime();
+
+    const countdownElement = document.getElementById('countdown');
+
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        clearInterval(timer);
+        countdownElement.innerHTML = "Chapter is now available!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownElement.innerHTML = `Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+  </script>
+</body>
+</html>
