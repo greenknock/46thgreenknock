@@ -54,27 +54,28 @@
     }
 
     .book-cover {
-      width: 350px;
+      width: 450px; /* Bigger image */
+      max-width: 90vw;
       border-radius: 8px;
-      box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+      box-shadow: 0 0 25px rgba(0, 255, 0, 0.6);
       transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
     .book-cover:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 40px rgba(0, 255, 0, 0.8), 0 0 80px rgba(0, 255, 0, 0.6);
+      box-shadow: 0 0 50px rgba(0, 255, 0, 0.8), 0 0 100px rgba(0, 255, 0, 0.6);
     }
 
     .title {
-      font-size: 2.2rem;
+      font-size: 2.6rem;
       color: #81c784;
       margin: 1rem 0 0.5rem;
       opacity: 0;
       animation: fadeIn 2s forwards 0.5s;
     }
 
-    /* ✅ Typing Effect for Subtitle */
+    /* ✅ Typing Effect */
     .subtitle {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       color: #ccc;
       border-right: 3px solid #81c784;
       width: 0;
@@ -84,7 +85,7 @@
       animation: typing 3s steps(30, end) forwards 2s, blink 0.7s infinite;
     }
     @keyframes typing {
-      to { width: 18ch; } /* Adjust to match text length */
+      to { width: 28ch; } /* Adjust to match text length */
     }
     @keyframes blink {
       50% { border-color: transparent; }
@@ -95,6 +96,9 @@
         flex-direction: column;
         gap: 1rem;
       }
+      .book-cover {
+        width: 90%;
+      }
       .subtitle {
         font-size: 1rem;
       }
@@ -102,6 +106,15 @@
   </style>
 </head>
 <body>
+  <!-- ✅ Audio Background -->
+  <audio id="bgMusic" autoplay loop>
+    <source src="dark-music.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="typingSound">
+    <source src="typing-sound.mp3" type="audio/mpeg">
+  </audio>
+
   <!-- ✅ Top Navigation Bar -->
   <header class="navbar">
     <nav class="nav-links">
@@ -118,5 +131,16 @@
     <h2 class="title">THE 46th GREEN KNOCK</h2>
     <p class="subtitle">A psychological mystery thriller</p>
   </div>
+
+  <script>
+    // ✅ Play typing sound only while typing animation runs
+    const typingSound = document.getElementById('typingSound');
+    setTimeout(() => {
+      typingSound.play();
+    }, 2000); // matches typing animation start
+    setTimeout(() => {
+      typingSound.pause();
+    }, 5000); // stop after text finishes
+  </script>
 </body>
 </html>
