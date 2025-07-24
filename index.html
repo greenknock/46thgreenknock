@@ -140,13 +140,38 @@
   <!-- ✅ Mute/Unmute Button -->
   <button class="mute-btn" onclick="toggleMute()">Mute</button>
 
+  <!-- ✅ Script for Silent Autoplay + Fade-in -->
   <script>
     const bgMusic = document.getElementById('bgMusic');
     const muteBtn = document.querySelector('.mute-btn');
 
-    // ✅ Set low volume on page load
-    bgMusic.volume = 0.2;
+    // Start at 0 volume for autoplay compliance
+    bgMusic.volume = 0;
 
+    // Fade in function
+    function fadeInAudio() {
+      let targetVolume = 0.2; // 20%
+      let currentVolume = 0;
+      let interval = setInterval(() => {
+        if (currentVolume < targetVolume) {
+          currentVolume += 0.01; // increase by 1%
+          bgMusic.volume = currentVolume;
+        } else {
+          clearInterval(interval);
+        }
+      }, 100); // every 100ms (smooth fade)
+    }
+
+    // Try autoplay silently, then fade in after page load
+    document.addEventListener("DOMContentLoaded", () => {
+      bgMusic.play().then(() => {
+        fadeInAudio();
+      }).catch(() => {
+        console.log("Autoplay blocked until user interacts.");
+      });
+    });
+
+    // Mute/Unmute Button Logic
     function toggleMute() {
       if (bgMusic.muted) {
         bgMusic.muted = false;
