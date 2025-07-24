@@ -2,112 +2,106 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>THE 46th GREEN KNOCK – Read Online | Psychological Mystery Thriller</title>
-
-  <!-- ✅ SEO Meta Tags -->
-  <meta name="description" content="THE 46th GREEN KNOCK - A psychological mystery thriller blending futuristic elements, memory loops, and deep emotional trauma. Read the chapters online now.">
-  <meta name="keywords" content="The 46th Green Knock, psychological thriller book, mystery novel online, futuristic story, memory loop thriller">
-  <meta name="author" content="THE 46th GREEN KNOCK">
-  <meta name="robots" content="index, follow">
-
-  <!-- ✅ Canonical -->
-  <link rel="canonical" href="https://greenknock.github.io/46thgreenknock/">
-
-  <!-- ✅ Open Graph (Facebook & Social) -->
-  <meta property="og:title" content="THE 46th GREEN KNOCK – A Psychological Mystery Thriller">
-  <meta property="og:description" content="A futuristic psychological thriller that challenges reality, identity, and memory. Read the chapters now.">
-  <meta property="og:image" content="https://greenknock.github.io/46thgreenknock/book%20cover.png">
-  <meta property="og:url" content="https://greenknock.github.io/46thgreenknock/">
-  <meta property="og:type" content="website">
-
-  <!-- ✅ Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="THE 46th GREEN KNOCK – A Psychological Mystery Thriller">
-  <meta name="twitter:description" content="Read the futuristic psychological thriller THE 46th GREEN KNOCK online now.">
-  <meta name="twitter:image" content="https://greenknock.github.io/46thgreenknock/book%20cover.png">
-
-  <!-- ✅ Favicon -->
-  <link rel="icon" href="book cover.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>THE 46th GREEN KNOCK</title>
+  <meta name="description" content="THE 46th GREEN KNOCK - A psychological mystery thriller" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
 
   <style>
     body {
       margin: 0;
-      background-color: #0a0a0a;
-      color: #ffffff;
       font-family: 'Merriweather', serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
+      background-color: #000;
+      color: #fff;
       text-align: center;
-      padding: 2rem;
     }
 
-    img {
-      max-width: 90%;
-      width: 300px;
-      height: auto;
-      border-radius: 16px;
-      box-shadow: 0 0 40px rgba(144, 238, 144, 0.5),
-                  0 0 80px rgba(144, 238, 144, 0.2);
-      transition: transform 0.3s ease;
+    /* ✅ Navigation Bar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #111;
+      border-bottom: 1px solid #333;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar h1 {
+      color: #81c784;
+      font-size: 1.5rem;
+      margin: 0;
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+    .nav-links a {
+      color: #90caf9;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+    .nav-links a:hover {
+      color: #81c784;
     }
 
-    img:hover {
+    /* ✅ Main Content */
+    .container {
+      margin-top: 3rem;
+    }
+    .book-cover {
+      width: 260px;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .book-cover:hover {
       transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(0, 255, 0, 0.8), 0 0 80px rgba(0, 255, 0, 0.6);
     }
-
-    h1 {
-      font-size: 2.5rem;
-      color: #90ee90;
-      margin-top: 1.2rem;
-      letter-spacing: 1px;
+    .title {
+      font-size: 2rem;
+      color: #81c784;
+      margin: 1rem 0 0.5rem;
     }
-
-    p {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
+    .subtitle {
+      font-size: 1rem;
       color: #ccc;
     }
 
-    .button {
-      margin-top: 1rem;
-      background-color: #1f1f1f;
-      color: #90ee90;
-      padding: 0.8rem 1.6rem;
-      border: 1px solid #444;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 1rem;
-      display: inline-block;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-
-    .button:hover {
-      background-color: #333;
-      transform: scale(1.05);
-    }
-
-    .button-container {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      margin-top: 2rem;
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .nav-links {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
     }
   </style>
 </head>
 <body>
-  <img src="book cover.png" alt="Book Cover of THE 46th GREEN KNOCK - Psychological Thriller" />
-  <h1>THE 46th GREEN KNOCK</h1>
-  <p>A psychological mystery thriller</p>
+  <!-- ✅ Top Navigation Bar -->
+  <header class="navbar">
+    <h1>THE 46th GREEN KNOCK</h1>
+    <nav class="nav-links">
+      <a href="chapters.html">Read Chapters</a>
+      <a href="review.html">Leave a Review</a>
+      <a href="about.html">About Book</a>
+      <a href="update_bar.html">Updates</a>
+    </nav>
+  </header>
 
-  <div class="button-container">
-    <a href="chapters.html" class="button">Read Chapters</a>
-    <a href="review.html" class="button">Leave a Review</a>
-    <a href="about.html" class="button">About Book</a>
-    <a href="update_bar.html" class="button">Updates</a>
+  <!-- ✅ Main Content -->
+  <div class="container">
+    <img src="book cover.png" alt="Book Cover" class="book-cover">
+    <h2 class="title">THE 46th GREEN KNOCK</h2>
+    <p class="subtitle">A psychological mystery thriller</p>
   </div>
 </body>
 </html>
