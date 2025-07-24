@@ -19,30 +19,23 @@
     /* ✅ Navigation Bar */
     .navbar {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
+      justify-content: center;
+      padding: 1rem;
       background-color: #111;
       border-bottom: 1px solid #333;
       position: sticky;
       top: 0;
       z-index: 1000;
     }
-    .navbar h1 {
-      color: #81c784;
-      font-size: 1.5rem;
-      margin: 0;
-      text-transform: uppercase;
-    }
     .nav-links {
       display: flex;
-      gap: 1.5rem;
+      gap: 3rem;
     }
     .nav-links a {
       color: #90caf9;
       text-decoration: none;
       font-weight: bold;
-      font-size: 1rem;
+      font-size: 1.4rem; /* Larger links */
       transition: color 0.3s ease;
     }
     .nav-links a:hover {
@@ -54,7 +47,7 @@
       margin-top: 3rem;
     }
     .book-cover {
-      width: 260px;
+      width: 350px; /* Bigger cover */
       border-radius: 8px;
       box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
       transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -64,23 +57,19 @@
       box-shadow: 0 0 40px rgba(0, 255, 0, 0.8), 0 0 80px rgba(0, 255, 0, 0.6);
     }
     .title {
-      font-size: 2rem;
+      font-size: 2.2rem;
       color: #81c784;
       margin: 1rem 0 0.5rem;
     }
     .subtitle {
-      font-size: 1rem;
+      font-size: 1.2rem;
       color: #ccc;
     }
 
-    @media (max-width: 600px) {
-      .navbar {
-        flex-direction: column;
-        gap: 0.5rem;
-      }
+    @media (max-width: 700px) {
       .nav-links {
         flex-direction: column;
-        gap: 0.8rem;
+        gap: 1rem;
       }
     }
   </style>
@@ -88,7 +77,6 @@
 <body>
   <!-- ✅ Top Navigation Bar -->
   <header class="navbar">
-    <h1>THE 46th GREEN KNOCK</h1>
     <nav class="nav-links">
       <a href="chapters.html">Read Chapters</a>
       <a href="review.html">Leave a Review</a>
