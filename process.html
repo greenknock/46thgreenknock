@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Writing Process - THE 46th GREEN KNOCK</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Merriweather', serif;
+      background-color: #000;
+      color: #fff;
+      padding: 20px;
+      line-height: 1.8;
+    }
+
+    h1 {
+      color: #81c784;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .step {
+      background: #111;
+      border-left: 5px solid #81c784;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(129,199,132,0.2);
+    }
+
+    .step h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #90caf9;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .tabs button {
+      padding: 8px 15px;
+      border: none;
+      background: #222;
+      color: #81c784;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .tabs button.active {
+      background: #81c784;
+      color: #000;
+    }
+
+    .tab-content {
+      margin-top: 10px;
+      display: none;
+      background: #222;
+      padding: 10px;
+      border-radius: 5px;
+      color: #ccc;
+      white-space: pre-wrap;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .note {
+      color: #90caf9;
+      font-size: 1rem;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 700px) {
+      .step h2 {
+        font-size: 1.2rem;
+      }
+      .tabs {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>My Writing Process</h1>
+
+  <div class="step">
+    <h2>1. Objectives of Chapter</h2>
+    <p>Here I define what the chapter should achieve—key emotions, suspense points, and character progress.</p>
+  </div>
+
+  <div class="step">
+    <h2>2. Solutions to Objectives</h2>
+    <p>I draft multiple approaches for each objective to choose the most impactful one.</p>
+    <div class="tabs">
+      <button onclick="openTab(this, 'solutions-plan1')" class="active">Plan 1</button>
+      <button onclick="openTab(this, 'solutions-plan2')">Plan 2</button>
+    </div>
+    <div id="solutions-plan1" class="tab-content active">[Your Plan 1 details here]</div>
+    <div id="solutions-plan2" class="tab-content">[Your Plan 2 details here]</div>
+  </div>
+
+  <div class="step">
+    <h2>3. Creating Messy Dialogues</h2>
+    <div class="tabs">
+      <button onclick="openTab(this, 'messy')" class="active">Raw</button>
+      <button onclick="openTab(this, 'polished')">Polished</button>
+      <button onclick="openTab(this, 'ai-fixed')">AI Fixed</button>
+    </div>
+    <div id="messy" class="tab-content active">[Your messy dialogues here]</div>
+    <div id="polished" class="tab-content">[Your polished dialogues here]</div>
+    <div id="ai-fixed" class="tab-content">[Your AI-fixed dialogues here]</div>
+  </div>
+
+  <div class="step">
+    <h2>4. Adding Tone & Atmosphere</h2>
+    <p>I layer in descriptive elements, sensory details, and pacing for mood building.</p>
+  </div>
+
+  <div class="step">
+    <h2>5. Finding Better Words</h2>
+    <p>I refine vocabulary to match the mood and psychological depth of scenes.</p>
+  </div>
+
+  <div class="step">
+    <h2>6. Fixing Grammar Through AI</h2>
+    <p>I use AI for final grammar checks and subtle readability improvements.</p>
+    <p class="note">Note: Raw drafts and AI-processed text are shown separately to maintain transparency.</p>
+  </div>
+
+  <script>
+    function openTab(btn, tabId) {
+      const parent = btn.closest('.step');
+      const buttons = parent.querySelectorAll('.tabs button');
+      const contents = parent.querySelectorAll('.tab-content');
+
+      buttons.forEach(b => b.classList.remove('active'));
+      contents.forEach(c => c.classList.remove('active'));
+
+      btn.classList.add('active');
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
+</body>
+</html>
