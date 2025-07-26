@@ -115,10 +115,32 @@
       border-radius: 5px;
       color: #ccc;
       white-space: pre-wrap;
+      min-height: 60px;
     }
 
     .tab-content.active {
       display: block;
+    }
+
+    .tab-content[contenteditable="true"]:focus {
+      outline: 2px solid #81c784;
+    }
+
+    .add-objective-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #81c784;
+      color: #000;
+      border: none;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .add-objective-btn:hover {
+      background: #66bb6a;
     }
 
     .ai-note {
@@ -164,34 +186,8 @@
   <div class="step">
     <h2>2. Solutions to Objectives</h2>
     <p>Below are multiple objectives with their respective plans:</p>
-    <div class="accordion">
-      <!-- Objective 1 -->
-      <div class="accordion-item">
-        <div class="accordion-header" onclick="toggleAccordion(this)">Objective 1: [Your Objective Title]</div>
-        <div class="accordion-content">
-          <div class="tabs">
-            <button onclick="openTab(this, 'obj1-plan1')" class="active">Plan 1</button>
-            <button onclick="openTab(this, 'obj1-plan2')">Plan 2</button>
-          </div>
-          <div id="obj1-plan1" class="tab-content active">[Plan 1 details for Objective 1]</div>
-          <div id="obj1-plan2" class="tab-content">[Plan 2 details for Objective 1]</div>
-        </div>
-      </div>
-
-      <!-- Objective 2 -->
-      <div class="accordion-item">
-        <div class="accordion-header" onclick="toggleAccordion(this)">Objective 2: [Your Objective Title]</div>
-        <div class="accordion-content">
-          <div class="tabs">
-            <button onclick="openTab(this, 'obj2-plan1')" class="active">Plan 1</button>
-            <button onclick="openTab(this, 'obj2-plan2')">Plan 2</button>
-          </div>
-          <div id="obj2-plan1" class="tab-content active">[Plan 1 details for Objective 2]</div>
-          <div id="obj2-plan2" class="tab-content">[Plan 2 details for Objective 2]</div>
-        </div>
-      </div>
-    </div>
-    <p style="color:#90caf9; font-size:0.9rem;">Add more objectives by duplicating the accordion-item block above.</p>
+    <div class="accordion" id="objectivesContainer"></div>
+    <button class="add-objective-btn" onclick="addObjective()">+ Add Objective</button>
   </div>
 
   <div class="step">
@@ -201,26 +197,26 @@
       <button onclick="openTab(this, 'polished')">Polished</button>
       <button onclick="openTab(this, 'ai-fixed')">AI Fixed</button>
     </div>
-    <div id="messy" class="tab-content active">[Your messy dialogues here]</div>
-    <div id="polished" class="tab-content">[Your polished dialogues here]</div>
-    <div id="ai-fixed" class="tab-content">[Your AI-fixed dialogues here]
+    <div id="messy" class="tab-content active" contenteditable="true">[Your messy dialogues here]</div>
+    <div id="polished" class="tab-content" contenteditable="true">[Your polished dialogues here]</div>
+    <div id="ai-fixed" class="tab-content" contenteditable="true">[Your AI-fixed dialogues here]
       <p class="ai-note">AI only fixed grammar and readability, not creativity.</p>
     </div>
   </div>
 
   <div class="step">
     <h2>4. Adding Tone & Atmosphere</h2>
-    <p>I layer in descriptive elements, sensory details, and pacing for mood building.</p>
+    <p contenteditable="true">I layer in descriptive elements, sensory details, and pacing for mood building.</p>
   </div>
 
   <div class="step">
     <h2>5. Finding Better Words</h2>
-    <p>I refine vocabulary to match the mood and psychological depth of scenes.</p>
+    <p contenteditable="true">I refine vocabulary to match the mood and psychological depth of scenes.</p>
   </div>
 
   <div class="step">
     <h2>6. Fixing Grammar Through AI</h2>
-    <p>I use AI for final grammar checks and subtle readability improvements.</p>
+    <p contenteditable="true">I use AI for final grammar checks and subtle readability improvements.</p>
     <p style="color:#90caf9;">Raw drafts and AI-processed text are shown separately to maintain transparency.</p>
   </div>
 
@@ -229,6 +225,11 @@
   </div>
 
   <script>
+    let objectiveCount = 0;
+
+    // Load saved data on page load
+    document.addEventListener('DOMContentLoaded', loadData);
+
     function openTab(btn, tabId) {
       const parent = btn.closest('.accordion-content') || btn.closest('.step');
       const buttons = parent.querySelectorAll('.tabs button');
@@ -243,14 +244,58 @@
 
     function toggleAccordion(header) {
       const content = header.nextElementSibling;
-      const isActive = content.classList.contains('active');
+      content.classList.toggle('active');
+    }
 
-      // Close all accordion contents
-      document.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('active'));
+    function addObjective(title = `[Your Objective Title]`, plan1 = `[Plan 1 details]`, plan2 = `[Plan 2 details]`) {
+      objectiveCount++;
+      const container = document.getElementById('objectivesContainer');
+      const newObjective = document.createElement('div');
+      newObjective.classList.add('accordion-item');
+      newObjective.innerHTML = `
+        <div class="accordion-header" onclick="toggleAccordion(this)">Objective ${objectiveCount}: ${title}</div>
+        <div class="accordion-content">
+          <div class="tabs">
+            <button onclick="openTab(this, 'obj${objectiveCount}-plan1')" class="active">Plan 1</button>
+            <button onclick="openTab(this, 'obj${objectiveCount}-plan2')">Plan 2</button>
+          </div>
+          <div id="obj${objectiveCount}-plan1" class="tab-content active" contenteditable="true">${plan1}</div>
+          <div id="obj${objectiveCount}-plan2" class="tab-content" contenteditable="true">${plan2}</div>
+        </div>`;
+      container.appendChild(newObjective);
+      saveData();
+    }
 
-      if (!isActive) {
-        content.classList.add('active');
-      }
+    // Auto-save when user edits content
+    document.addEventListener('input', saveData);
+
+    function saveData() {
+      const data = {
+        objectives: [],
+        messy: document.getElementById('messy').innerHTML,
+        polished: document.getElementById('polished').innerHTML,
+        aiFixed: document.getElementById('ai-fixed').innerHTML
+      };
+
+      document.querySelectorAll('.accordion-item').forEach((item, index) => {
+        const title = item.querySelector('.accordion-header').textContent.replace(`Objective ${index + 1}: `, '');
+        const plan1 = item.querySelector(`#obj${index + 1}-plan1`).innerHTML;
+        const plan2 = item.querySelector(`#obj${index + 1}-plan2`).innerHTML;
+        data.objectives.push({ title, plan1, plan2 });
+      });
+
+      localStorage.setItem('writingProcessData', JSON.stringify(data));
+    }
+
+    function loadData() {
+      const saved = localStorage.getItem('writingProcessData');
+      if (!saved) return;
+      const data = JSON.parse(saved);
+
+      data.objectives.forEach(obj => addObjective(obj.title, obj.plan1, obj.plan2));
+      document.getElementById('messy').innerHTML = data.messy;
+      document.getElementById('polished').innerHTML = data.polished;
+      document.getElementById('ai-fixed').innerHTML = data.aiFixed;
     }
   </script>
 </body>
