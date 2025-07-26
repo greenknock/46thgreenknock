@@ -47,6 +47,44 @@
       color: #90caf9;
     }
 
+    /* Accordion styles */
+    .accordion {
+      margin-top: 15px;
+    }
+
+    .accordion-item {
+      background: #222;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid #333;
+    }
+
+    .accordion-header {
+      padding: 12px;
+      font-size: 1.1rem;
+      color: #81c784;
+      cursor: pointer;
+      background: #111;
+      border-bottom: 1px solid #333;
+      transition: background 0.3s ease;
+    }
+
+    .accordion-header:hover {
+      background: #1a1a1a;
+    }
+
+    .accordion-content {
+      display: none;
+      padding: 12px;
+      background: #111;
+    }
+
+    .accordion-content.active {
+      display: block;
+    }
+
+    /* Tabs inside accordion */
     .tabs {
       display: flex;
       gap: 10px;
@@ -81,12 +119,6 @@
 
     .tab-content.active {
       display: block;
-    }
-
-    .note {
-      color: #90caf9;
-      font-size: 1rem;
-      margin-top: 10px;
     }
 
     .ai-note {
@@ -131,13 +163,35 @@
 
   <div class="step">
     <h2>2. Solutions to Objectives</h2>
-    <p>I draft multiple approaches for each objective to choose the most impactful one.</p>
-    <div class="tabs">
-      <button onclick="openTab(this, 'solutions-plan1')" class="active">Plan 1</button>
-      <button onclick="openTab(this, 'solutions-plan2')">Plan 2</button>
+    <p>Below are multiple objectives with their respective plans:</p>
+    <div class="accordion">
+      <!-- Objective 1 -->
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">Objective 1: [Your Objective Title]</div>
+        <div class="accordion-content">
+          <div class="tabs">
+            <button onclick="openTab(this, 'obj1-plan1')" class="active">Plan 1</button>
+            <button onclick="openTab(this, 'obj1-plan2')">Plan 2</button>
+          </div>
+          <div id="obj1-plan1" class="tab-content active">[Plan 1 details for Objective 1]</div>
+          <div id="obj1-plan2" class="tab-content">[Plan 2 details for Objective 1]</div>
+        </div>
+      </div>
+
+      <!-- Objective 2 -->
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">Objective 2: [Your Objective Title]</div>
+        <div class="accordion-content">
+          <div class="tabs">
+            <button onclick="openTab(this, 'obj2-plan1')" class="active">Plan 1</button>
+            <button onclick="openTab(this, 'obj2-plan2')">Plan 2</button>
+          </div>
+          <div id="obj2-plan1" class="tab-content active">[Plan 1 details for Objective 2]</div>
+          <div id="obj2-plan2" class="tab-content">[Plan 2 details for Objective 2]</div>
+        </div>
+      </div>
     </div>
-    <div id="solutions-plan1" class="tab-content active">[Your Plan 1 details here]</div>
-    <div id="solutions-plan2" class="tab-content">[Your Plan 2 details here]</div>
+    <p style="color:#90caf9; font-size:0.9rem;">Add more objectives by duplicating the accordion-item block above.</p>
   </div>
 
   <div class="step">
@@ -167,7 +221,7 @@
   <div class="step">
     <h2>6. Fixing Grammar Through AI</h2>
     <p>I use AI for final grammar checks and subtle readability improvements.</p>
-    <p class="note">Raw drafts and AI-processed text are shown separately to maintain transparency.</p>
+    <p style="color:#90caf9;">Raw drafts and AI-processed text are shown separately to maintain transparency.</p>
   </div>
 
   <div class="transparency-badge">
@@ -176,7 +230,7 @@
 
   <script>
     function openTab(btn, tabId) {
-      const parent = btn.closest('.step');
+      const parent = btn.closest('.accordion-content') || btn.closest('.step');
       const buttons = parent.querySelectorAll('.tabs button');
       const contents = parent.querySelectorAll('.tab-content');
 
@@ -185,6 +239,18 @@
 
       btn.classList.add('active');
       document.getElementById(tabId).classList.add('active');
+    }
+
+    function toggleAccordion(header) {
+      const content = header.nextElementSibling;
+      const isActive = content.classList.contains('active');
+
+      // Close all accordion contents
+      document.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('active'));
+
+      if (!isActive) {
+        content.classList.add('active');
+      }
     }
   </script>
 </body>
