@@ -18,7 +18,18 @@
     h1 {
       color: #81c784;
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
+    }
+
+    .transparency-note {
+      text-align: center;
+      color: #90caf9;
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+      background: #111;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(129,199,132,0.3);
     }
 
     .step {
@@ -78,6 +89,24 @@
       margin-top: 10px;
     }
 
+    .ai-note {
+      color: #81c784;
+      font-style: italic;
+      font-size: 0.9rem;
+      margin-top: 5px;
+    }
+
+    .transparency-badge {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 0.9rem;
+      color: #ccc;
+      background: #111;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #81c784;
+    }
+
     @media (max-width: 700px) {
       .step h2 {
         font-size: 1.2rem;
@@ -90,6 +119,10 @@
 </head>
 <body>
   <h1>My Writing Process</h1>
+  <div class="transparency-note">
+    This page shows my complete writing process – from raw ideas to AI-assisted grammar fixes.  
+    I want readers to see what is my original work and where AI helped only for polishing.
+  </div>
 
   <div class="step">
     <h2>1. Objectives of Chapter</h2>
@@ -116,7 +149,9 @@
     </div>
     <div id="messy" class="tab-content active">[Your messy dialogues here]</div>
     <div id="polished" class="tab-content">[Your polished dialogues here]</div>
-    <div id="ai-fixed" class="tab-content">[Your AI-fixed dialogues here]</div>
+    <div id="ai-fixed" class="tab-content">[Your AI-fixed dialogues here]
+      <p class="ai-note">AI only fixed grammar and readability, not creativity.</p>
+    </div>
   </div>
 
   <div class="step">
@@ -132,7 +167,11 @@
   <div class="step">
     <h2>6. Fixing Grammar Through AI</h2>
     <p>I use AI for final grammar checks and subtle readability improvements.</p>
-    <p class="note">Note: Raw drafts and AI-processed text are shown separately to maintain transparency.</p>
+    <p class="note">Raw drafts and AI-processed text are shown separately to maintain transparency.</p>
+  </div>
+
+  <div class="transparency-badge">
+    ✔ 100% Storyline & Characters by Author | AI used only for grammar fixes
   </div>
 
   <script>
