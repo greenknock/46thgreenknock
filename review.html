@@ -6,13 +6,13 @@
   <title>Review - THE 46th GREEN KNOCK</title>
 
   <!-- ✅ SEO Meta Tags -->
-  <meta name="description" content="Leave your review for THE 46th GREEN KNOCK. Share your thoughts, favorite characters, and feedback on this psychological mystery thriller.">
-  <meta name="keywords" content="review THE 46th GREEN KNOCK, book feedback, thriller review, psychological mystery review">
+  <meta name="description" content="Leave your review for THE 46th GREEN KNOCK. Share your thoughts, favorite characters, and doubts or questions about the story.">
+  <meta name="keywords" content="review THE 46th GREEN KNOCK, book feedback, thriller review, psychological mystery review, story doubts">
   <meta name="author" content="Green Knock">
 
   <!-- ✅ Open Graph Tags (Facebook & Social Media) -->
   <meta property="og:title" content="Review THE 46th GREEN KNOCK" />
-  <meta property="og:description" content="Share your thoughts on THE 46th GREEN KNOCK — a psychological mystery thriller set in a futuristic world of controlled emotions." />
+  <meta property="og:description" content="Share your review and ask questions about THE 46th GREEN KNOCK — a psychological mystery thriller set in a futuristic world of controlled emotions." />
   <meta property="og:image" content="https://greenknock.github.io/46thgreenknock/book%20cover.png" />
   <meta property="og:url" content="https://greenknock.github.io/46thgreenknock/review.html" />
   <meta property="og:type" content="website" />
@@ -74,23 +74,26 @@
   <h1>Chapter Review</h1>
   <form action="https://formspree.io/f/xanbelbn" method="POST">
     <label for="chapter">Chapter Number</label>
- <select id="chapter" name="chapter" required>
-  <option value="1">Chapter 1</option>
-  <option value="2">Chapter 2</option>
-  <option value="3">Chapter 3</option>
-  <option value="4">Chapter 4</option>
-  <option value="5">Chapter 5</option>
-  <option value="6">Chapter 6</option>
-  <option value="7">Chapter 7</option>
-  <option value="8">Chapter 8</option>
-</select>
-
+    <select id="chapter" name="chapter" required>
+      <option value="1">Chapter 1</option>
+      <option value="2">Chapter 2</option>
+      <option value="3">Chapter 3</option>
+      <option value="4">Chapter 4</option>
+      <option value="5">Chapter 5</option>
+      <option value="6">Chapter 6</option>
+      <option value="7">Chapter 7</option>
+      <option value="8">Chapter 8</option>
+    </select>
 
     <label for="review">Your Review</label>
     <textarea id="review" name="review" rows="4" placeholder="What are your thoughts? Any doubts?" required></textarea>
 
     <label for="character">Favorite Character and Why?</label>
     <textarea id="character" name="character" rows="2" placeholder="Tell us who you liked and why..." required></textarea>
+
+    <!-- ✅ New Doubts/Confusion Box -->
+    <label for="doubts">Any Doubts or Confusions?</label>
+    <textarea id="doubts" name="doubts" rows="3" placeholder="Write your doubts or confusion about the story..."></textarea>
 
     <label for="email">Your Email (optional)</label>
     <input type="email" name="email" placeholder="example@gmail.com">
